@@ -1,0 +1,476 @@
+:root {
+  --primary: pink;
+}
+
+.icon {
+  border-radius: 3rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "poppins", sans-serif;
+  background-color: pink;
+  /* min-height: 2000px; */
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  padding: 1.3rem 7%;
+  background-color: rgba(232, 121, 158, 0.9);
+  border-bottom: 1px solid pink;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgb(255, 17, 96);
+}
+
+.navbar .navbar-logo span {
+  color: white;
+}
+
+.navbar-utama {
+  color: white;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar-utama:hover {
+  color: rgb(255, 17, 96);
+}
+
+.navbar-utama::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid rgb(255, 17, 96);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+.navbar-utama:hover:after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra{
+  display: flex !important;
+  align-items: center !important;
+
+}
+
+
+.navbar .navbar-extra a {
+  color: white;
+  margin: 0 0.5rem;
+  display: inline-flex;
+  align-items: center;
+
+}
+
+.navbar .navbar-extra a:hover {
+  color: rgb(255, 17, 96);
+}
+
+#menu {
+  display: none;
+}
+
+.navbar .navbar-logo a {
+  color: white;
+}
+
+
+.search-container {
+  flex-grow: 1;
+  position: relative;
+  max-width: 550px;
+  margin-left: 8rem;
+  margin-right: 2rem;
+}
+
+/* Box Input dan Tombol */
+.search-box {
+  margin-left: auto;
+  display: flex;
+  flex-grow: 1;
+}
+
+/* Kotak Input Pencarian (Panjang & Besar) */
+.search-input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+/* Tombol Cari */
+.search-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #e8799c; /* Warna tema Anda */
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: #d66285;
+}
+
+/* Kotak Rekomendasi/Autocomplete (Melayang di bawah Input) */
+.autocomplete-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-top: none;
+  z-index: 99;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: none; /* Disembunyikan di awal oleh JavaScript */
+  border-radius: 0 0 4px 4px;
+}
+
+/* Item Daftar Rekomendasi */
+.suggestion-item {
+  padding: 12px 15px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #f5f5f5;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Efek ketika Rekomendasi Disorot (Hover) */
+.suggestion-item:hover {
+  background-color: #f9f9f9;
+  color: #e8799c;
+}
+
+/* navbar */
+
+/* hero section */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../IMG/preloved1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(0deg, pink 8%, rgba(255, 255, 255, 0) 50%);
+}
+
+.hero .konten {
+  padding: 1.3rem 7%;
+  max-width: 60rem;
+}
+
+.hero .konten h1 {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .konten h1 span {
+  color: rgb(255, 17, 96);
+}
+
+.hero .konten p {
+  color: white;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba(16, 16, 16, 0.5);
+  line-height: 1.2;
+  mix-blend-mode: difference;
+}
+
+.hero .konten .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: white;
+  background-color: rgb(232, 121, 158);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+/* media qeuires */
+
+/* about section */
+
+.about {
+  padding: 10rem 7% 1.4rem;
+}
+
+/* tablet */
+/* @media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #menu {
+    display: inline-block;
+  }
+  .navbar-utama1 {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgb(232, 121, 158);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar-utama1.active {
+    right: 0;
+  }
+
+
+  .navbar-utama {
+    color: white;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar-utama::after {
+    transform-origin: 0 0;
+  }
+  .navbar-utama:hover::after {
+    transform: scaleX(0.2);
+  }
+}
+
+/* phone mobile  */
+
+/* @media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+} */ 
+
+@media (min-width: 769px) {
+  
+  #search, 
+  #search svg, 
+  .navbar-extra a#search {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+
+/* ==========================================================================
+   TAMPILAN KHUSUS TABLET & HP (MAKSIMAL 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+  .navbar .navbar-extra {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+  }
+
+  /* Tampilkan tombol ikon search bawaan navbar-extra Anda */
+  #search,
+  #search svg,
+  .navbar-extra a#search {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+  }
+  
+  /* KUNCI: Ubah Search Container menjadi melayang turun di bawah navbar saat di HP */
+  .search-container {
+    position: absolute;
+    top: 100%;           /* Muncul tepat di bawah navbar */
+    left: 7%;            /* Mengikuti padding 7% navbar Anda */
+    right: 7%;
+    max-width: 86%;      /* Ukuran pas di tengah layar HP, tidak kepanjangan */
+    margin: 0 auto;
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    
+    /* Efek Animasi Meluncur (Sembunyi di awal) */
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.3s ease;
+    opacity: 0;
+    z-index: 999;
+  }
+
+  /* Pemicu dari JavaScript agar kotak pencarian meluncur muncul */
+  .search-container.aktif {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  /* Menyesuaikan kotak rekomendasi melayang agar rapi di layar HP */
+  .autocomplete-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+}
+
+
+.navbar-extra a,
+.navbar-extra a svg {
+  display: inline-block !important;
+  vertical-align: middle !important; /* Memaksa SVG bawaan Feather Icons rata tengah dengan teks/ikon lain */
+  height: 24px !important;           /* Kunci tinggi ikon agar seragam */
+  width: 24px !important;            /* Kunci lebar ikon agar seragam */
+  line-height: 1 !important;
+}
+
+/* section */
+
+/* ==================== SECTION PRODUK ==================== */
+.produk-section {
+  /* Naikkan padding samping dari 7% menjadi 10% atau 12% agar memberikan ruang kosong di pinggir */
+  align-items: center;
+  padding: 6rem 12% 4rem; 
+  margin-bottom: 30px;
+}
+
+
+/* Mengatur posisi gambar agar badge nego bisa melayang di atasnya */
+.produk-image {
+  position: relative;
+}
+
+/* Pengaturan Gambar Produk Agar Panjang Ke Atas & Lebar */
+.produk-image img {
+  width: 100%;        /* Mengunci lebar gambar agar 100% penuh mengikuti kotak kartu */
+  height: 400px;      /* UBAH DI SINI: Naikkan tinggi dari 300px menjadi 400px atau 420px agar memanjang ke atas */
+  object-fit: cover;  /* KUNCI: Memotong foto secara otomatis di bagian tengah agar tidak lonjong atau gepeng */
+  object-position: center; /* Memastikan fokus potongan gambar selalu tepat di tengah baju/sepatu */
+  border-radius: 0.6rem;
+}
+
+
+/* Badge Tulisan 'Bisa Nego' Melayang di Pojok Kiri Atas Gambar */
+.badge-nego {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #25d366; /* Warna hijau khas WhatsApp/Nego */
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+/* Mengatur agar tombol Detail dan Nego berjejer kanan-kiri */
+.produk-action {
+  display: flex;
+  gap: 10px; /* Jarak antara kedua tombol */
+}
+
+/* Penyesuaian Tombol Detail (Biar berbagi ruang) */
+.btn-beli {
+  flex: 2; /* Mengambil ruang lebih besar */
+  text-align: center;
+  padding: 0.8rem;
+  background-color: rgb(232, 121, 158);
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+/* Styling Tombol Nego Baru */
+.btn-nego {
+  flex: 1; /* Mengambil ruang secukupnya */
+  text-align: center;
+  padding: 0.8rem;
+  background-color: #25d366; /* Warna hijau WhatsApp */
+  color: white;
+  font-weight: 500;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-nego:hover {
+  background-color: #128c7e; /* Hijau lebih gelap saat di-hover */
+}
+
+/* KUNCI TATA LETAK: Kunci 3 kolom sejajar di layar laptop/komputer */
+.produk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* MEMBAGI PERSIS 3 KOLOM SEJAJAR RATA */
+  gap: 2.5rem; /* Jarak spasi antar kotak produk */
+}
+
+/* ==================== MEDIA QUERIES (BIAR PAS DI HP) ==================== */
+
+/* Tampilan di Tablet (Layar di bawah 992px, kita ubah jadi 2 kolom) */
+@media (max-width: 992px) {
+  .produk-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1.5rem;
+  }
+}
+
+/* Tampilan di HP (Layar di bawah 576px, otomatis berjejer 1 kolom ke bawah biar tidak gepeng) */
+@media (max-width: 576px) {
+  .produk-grid {
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+  }
+}
+
+/* Sisa CSS kartu (.produk-card, .produk-image, dll) ke bawah tetap biarkan sama seperti kemarin */
